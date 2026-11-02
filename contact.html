@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Thandeka's Kitchen in Germiston. Phone us, send an email, or use our online contact form.">
+    <title>Thandeka's Kitchen | Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Thandeka's Kitchen</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Contact Us</h2>
+        <p>Get in touch with Thandeka's Kitchen - we'd love to hear from you.</p>
+
+        <section>
+            <h3>Get In Touch</h3>
+            <ul>
+                <li>Phone: 063 185 5676</li>
+                <li>Email: info@thandekaskitchen.co.za</li>
+                <li>Address: 5329 Ludlelo street, Germiston, Gauteng</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Operating Hours</h3>
+            <ul>
+                <li>Monday-Friday: 09:00-19:00</li>
+                <li>Saturday: 10:00-20:00</li>
+                <li>Sunday: 10:00-16:00</li>
+            </ul>
+        </section>
+
+        <h2 style="margin-top: 2rem;">Send a General Message</h2>
+        <form class="ajax-form">
+            <div class="form-group">
+                <label for="conName">Full Name:</label>
+                <input type="text" id="conName" name="name" required>
+                <div class="error-message">Please enter your name.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="conEmail">Email Address:</label>
+                <input type="email" id="conEmail" name="email" required>
+                <div class="error-message">Please enter a valid email.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="conSubject">Subject:</label>
+                <input type="text" id="conSubject" name="subject" required>
+                <div class="error-message">Please enter a subject.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="conMessage">Message:</label>
+                <textarea id="conMessage" name="message" required></textarea>
+                <div class="error-message">Please enter your message.</div>
+            </div>
+
+            <button type="submit" class="btn-submit">Send Message</button>
+            <div class="success-message">Thank you! Your message has been sent successfully.</div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Thandeka's Kitchen. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View photos of our delicious food and vibrant kitchen at Thandeka's Kitchen in Germiston.">
+    <title>Thandeka's Kitchen | Gallery</title>
+    <!-- This links to your CSS file -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Extra CSS specifically for the Lightbox to make sure it works perfectly -->
+    <style>
+        .lightbox {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.8); 
+            justify-content: center; 
+            align-items: center;
+        }
+        .lightbox-content {
+            max-width: 90%; 
+            max-height: 90%; 
+            border-radius: 5px;
+        }
+        .close-lightbox {
+            position: absolute; 
+            top: 20px; 
+            right: 40px; 
+            color: white; 
+            font-size: 40px; 
+            font-weight: bold; 
+            cursor: pointer;
+        }
+        main img {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        main img:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Thandeka's Kitchen</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Gallery</h2>
+        <p>A look at our food and kitchen in action. Click any image to view it larger.</p>
+        
+        <!-- These match your exact GitHub image names! -->
+        <img src="images/dish1.webp" alt="Combo Meals">
+        <img src="images/dish2.webp" alt="Burgers and wrappers">
+        <img src="images/dish3.webp" alt="Pap, Steak and Wors">
+        <img src="images/dish4.webp" alt="Platter">
+        <img src="images/dish5.jpg" alt="Pork Ribs">
+    </main>
+
+    <!-- The Lightbox Pop-up Container -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Enlarged image">
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Thandeka's Kitchen. All rights reserved.</p>
+    </footer>
+
+    <!-- The JavaScript to make the lightbox work -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Find all images inside the main tag
+            const images = document.querySelectorAll('main img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeBtn = document.querySelector('.close-lightbox');
+
+            // When you click an image, open the lightbox
+            images.forEach(img => {
+                img.addEventListener('click', function() {
+                    lightbox.style.display = "flex";
+                    lightboxImg.src = this.src;
+                });
+            });
+
+            // When you click the X, close it
+            closeBtn.addEventListener('click', function() {
+                lightbox.style.display = "none";
+            });
+
+            // If you click the dark background, close it
+            lightbox.addEventListener('click', function(e) {
+                if (e.target !== lightboxImg) {
+                    lightbox.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
